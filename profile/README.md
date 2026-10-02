@@ -1,87 +1,83 @@
-<div align="center">
+# 🌸 Team camellia
 
-# ☁️ 2026 소프트뱅크 해커톤 ☁️
+**SoftBank Hackathon 2026 · AI 원클릭 멀티 환경 배포 시스템**
 
----
-
-### “One Action, Infinite Clouds.”
-
-로컬 웹앱을 분석하고 필요한 인프라까지 직접 구성해  
-AWS와 온프레미스 환경에 배포하는 **AI 원클릭 배포 시스템, Camellia**
-
-</div>
-
-<br />
-
-## 🌺 Camellia
-
-Camellia는 기존 PaaS 위에 애플리케이션만 올리는 서비스가 아닙니다. 업로드된 애플리케이션을 분석한 뒤 하나의 배포 명세를 기반으로 **VPC·ALB·ECS 등 실제 인프라를 직접 생성**하고, 컨테이너 빌드부터 AWS·온프레미스 배포와 검증까지 자동화합니다.
-
-> **Upload → Analyze & IR → Build → Plan & Approve → Provision → Deploy → Verify**
-
-<br />
-
-<div align="center">
-
-## 🛠️ Tech Stack
-
-### ☁️ Infrastructure & Deployment
-
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
-![Amazon ECS](https://img.shields.io/badge/Amazon_ECS-FF9900?style=for-the-badge&logo=amazonecs&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=for-the-badge&logo=terraform&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Cloudflare](https://img.shields.io/badge/Cloudflare_Tunnel-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
-
-### ⚙️ Backend & Orchestration
-
-<sub>Node.js Runtime · TypeScript · Fastify Framework</sub>
-
-<br />
-
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Fastify](https://img.shields.io/badge/Fastify-000000?style=for-the-badge&logo=fastify&logoColor=white)
-![Zod](https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge&logo=zod&logoColor=white)
-
-### 🗄️ Data, Queue & Storage
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![pg-boss](https://img.shields.io/badge/pg--boss-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Amazon S3](https://img.shields.io/badge/Amazon_S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white)
-![MinIO](https://img.shields.io/badge/MinIO-C72E49?style=for-the-badge&logo=minio&logoColor=white)
-
-### 🤖 AI & Analysis
-
-![Anthropic Claude](https://img.shields.io/badge/Anthropic_Claude-191919?style=for-the-badge&logo=anthropic&logoColor=white)
-
-### 🧪 Quality & Tooling
-
-![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
-![pnpm](https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
-
-</div>
-
-<br />
-
-## 🚀 Deployment Flow
-
-1. 소스 업로드
-2. 스택 분석 및 배포 IR 생성
-3. 배포 대상 선택·확정
-4. 단일 컨테이너 이미지 빌드 및 digest 고정
-5. Terraform 인프라 계획 생성·승인
-6. 실제 인프라 프로비저닝
-7. AWS ECS Fargate 또는 온프레미스 Docker 환경에 애플리케이션 배포
-8. 연속 헬스체크를 통한 배포 검증 및 결과 기록
-9. 배포 완료 URL 제공
+> **One Action, Infinite Clouds.** 로컬 웹앱 소스를 올리면 AI 가 분석해 IR(앱 명세) 로 만들고, 같은 이미지로 AWS와 온프레미스에 원클릭 배포한다.
 
 ---
 
-<div align="center">
+## 🚀 메인 프로젝트
 
-**Team Camellia · SoftBank Hackathon 2026**
+**[Auto-Deployment-System](https://github.com/2026-Softbank-hackathon/Auto-Deployment-System)** — Fastify + Zod + pg-boss + Terraform + Cloudflare
 
-</div>
+- 데모 콘솔: https://console.camellia-deploy.app
+- 데모 영상: *(제출 전 추가 예정)*
+
+---
+
+## 📊 심사 제출 자료
+
+### 1. 소스 코드
+- GitHub: https://github.com/2026-Softbank-hackathon/Auto-Deployment-System
+
+### 2. 설계 문서·논의 메모
+- **Notion 팀 공간**: https://www.notion.so/term1_team_camellia-6958bee9ada483d1815c01c831afcb3a
+  - 📋 기능 명세 최신본 (109개)
+  - 🔌 API 명세 최신본 (49개)
+  - 📜 Discussion Log — 일자별 논의 과정 (9/27~10/3)
+  - 결정 기록 `docs/decisions.md` (D-01 ~ D-69, 대안·근거 포함)
+
+### 3. 발표 자료
+- **중간발표 (10/3)**: Notion `📊 중간발표 자료` *(링크 추가 예정)*
+- **최종발표 (10/4)**: 미작성
+
+---
+
+## 🏗 핵심 아키텍처
+
+![전체 아키텍처](https://raw.githubusercontent.com/2026-Softbank-hackathon/Auto-Deployment-System/main/docs/architecture_overall_v5.5.svg)
+
+**4 종 다이어그램** ([docs/](https://github.com/2026-Softbank-hackathon/Auto-Deployment-System/tree/main/docs)):
+- [전체 아키텍처 v5.5](https://raw.githubusercontent.com/2026-Softbank-hackathon/Auto-Deployment-System/main/docs/architecture_overall_v5.5.svg)
+- [AWS 배포 상세](https://raw.githubusercontent.com/2026-Softbank-hackathon/Auto-Deployment-System/main/docs/architecture_deploy_aws_v5.5.svg)
+- [온프레미스 배포 상세](https://raw.githubusercontent.com/2026-Softbank-hackathon/Auto-Deployment-System/main/docs/architecture_deploy_onprem_v5.5.svg)
+- [환경 전환 상세](https://raw.githubusercontent.com/2026-Softbank-hackathon/Auto-Deployment-System/main/docs/architecture_env_switch_v5.5.svg)
+
+---
+
+## 💡 와우 포인트
+
+| | 내용 | 심사 매핑 |
+|---|---|---|
+| 1 | **원클릭 배포** — 소스 zip → AI 분석 → 1회 빌드 → 두 환경 동시 배포 | 완성도 · AI |
+| 2 | **환경 전환** — AWS ↔ 온프레미스 CF DNS CNAME 1 API call · TTL 1초 · 15분 롤백 유예 | 클라우드 활용 · 독창성 |
+| 3 | **같은 digest** — ECS · Lambda · S3 · 온프레미스 Docker 모두 하나의 이미지 | 이식성 |
+| 4 | **운영 가시화** — `/ops` 대시보드 (큐 · 워커 heartbeat · AI 비용 · CD 기록) | 운영 수준 인프라 |
+| 5 | **다국어 콘솔** — AI 설명 1 호출로 한국어·일본어 구조화 출력 | AI 효율 |
+
+---
+
+## 👥 팀 구성
+
+| 역할 | GitHub | 담당 |
+|---|---|---|
+| PM · 분석 · IR · 발표 | [@Pionia5375](https://github.com/Pionia5375) | 이정 |
+| 운영 대시보드 · CD · 로깅 | [@csh1668](https://github.com/csh1668) | 조서현 |
+| 보안 · 비용 청구 | [@awj1052](https://github.com/awj1052) | 안우진 |
+| 빌드 · 프로비저닝 · Terraform | [@gpffh20](https://github.com/gpffh20) | 신은영 |
+| 프론트엔드 | [@minseong99](https://github.com/minseong99) | 김민성 |
+| 검증 · Agent · 헬스체크 | [@kmsdevdata-sketch](https://github.com/kmsdevdata-sketch) | 김민서 |
+
+---
+
+## 📅 일정
+
+- **10/3 (토) 10:00** — 중간 제출 (소스 · 설계 · 발표 자료 링크)
+- 10/3 10:30~14:00 — 현장 개발
+- 10/3 14:00~17:00 — 중간 발표 (3분 + Q&A 4분)
+- **10/4 (일) 13:00** — 최종 제출 (발표 언어 + 통역 스크립트)
+- 10/4 15:00~16:30 — 최종 발표 (5분)
+
+---
+
+**심사 기준**: 완성도·데모 30 / 클라우드 활용 30 / 팀 개발 20 / 독창성 10 / AI 10
