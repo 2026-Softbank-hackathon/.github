@@ -76,6 +76,62 @@ AWS와 온프레미스 환경에 배포하는 **AI 원클릭 배포 시스템, C
 
 <br />
 
+<br />
+
+<table align="center">
+  <tr>
+    <td align="center" rowspan="2" width="110">
+        <img
+          src="../assets/coro.png"
+          width="78"
+          alt="코로"
+        />
+    </td>
+    <td width="390">
+      <sub><strong>TEAM CAMELLIA</strong></sub>
+      <br />
+      <strong>コロの引っ越し</strong>
+      <sub>코로의 이사</sub>
+      <br />
+      <sub>On-Prem Agent · 로컬 환경을 배포 대상으로 연결합니다.</sub>
+    </td>
+    <td align="center" width="210">
+      <a href="https://github.com/2026-Softbank-hackathon/Auto-Deployment-System/releases/latest">
+        <img
+          src="https://img.shields.io/github/v/release/2026-Softbank-hackathon/Auto-Deployment-System?filter=onprem-agent-*&display_name=tag&style=flat-square&label=latest%20release&color=238636"
+          alt="Latest On-Prem Agent release"
+        />
+      </a>
+      <br />
+      <sub>
+        <a href="https://github.com/2026-Softbank-hackathon/Auto-Deployment-System/releases/latest">
+          릴리스 노트 및 체크섬 →
+        </a>
+      </sub>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <img
+        src="https://img.shields.io/badge/macOS-arm64_%7C_x64-000000?style=flat-square&logo=apple&logoColor=white"
+        alt="macOS arm64 and x64"
+      />
+      &nbsp;
+      <img
+        src="https://img.shields.io/badge/Windows_10%2F11-x64-0078D4?style=flat-square&logo=windows11&logoColor=white"
+        alt="Windows 10 and 11 x64"
+      />
+      &nbsp;
+      <img
+        src="https://img.shields.io/badge/Docker-Desktop-2496ED?style=flat-square&logo=docker&logoColor=white"
+        alt="Docker Desktop"
+      />
+    </td>
+  </tr>
+</table>
+
+<br />
+
 ## 🚀 Deployment Flow
 
 1. 소스 업로드
