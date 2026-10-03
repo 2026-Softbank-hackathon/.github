@@ -13,9 +13,9 @@ AWS와 온프레미스 환경에 배포하는 **AI 원클릭 배포 시스템, C
 
 <br />
 
-## 🌺 Camellia
+## 🌺 TEAM Camellia
 
-Camellia는 기존 PaaS 위에 애플리케이션만 올리는 서비스가 아닙니다. 업로드된 애플리케이션을 분석한 뒤 하나의 배포 명세를 기반으로 **VPC·ALB·ECS 등 실제 인프라를 직접 생성**하고, 컨테이너 빌드부터 AWS·온프레미스 배포와 검증까지 자동화합니다.
+コロの引っ越し(코로의 이사) 는 기존 PaaS 위에 애플리케이션만 올리는 서비스가 아닌 업로드된 애플리케이션을 분석한 뒤 하나의 배포 명세를 기반으로 **VPC·ALB·ECS 등 실제 인프라를 직접 생성**하고, 컨테이너 빌드부터 AWS·온프레미스 배포와 검증까지 자동화합니다.
 
 > **Upload → Analyze & IR → Build → Plan & Approve → Provision → Deploy → Verify**
 
