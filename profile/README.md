@@ -287,17 +287,19 @@ ZIP 을 다시 올리지 않고 버튼 하나로 옮깁니다. 같은 이미지�
 
 <br />
 
-## 👥 Team
 
-| 역할 | 이름 | 담당 |
-|---|---|---|
-| Frontend | | 웹 콘솔 |
-| Backend | | API · 배포 파이프라인 |
-| Infra | | Terraform 프로필 · 플랫폼 |
-| On-Prem Agent | | 에이전트 · Cloudflare 연동 |
-| 모니터링 | | |
-| 보안 | | |
+## 👥 Core Team
 
+> 각 구성원의 주 담당 도메인을 기준으로 정리했습니다. 설계·리뷰·통합 작업은 팀 전체가 함께 수행했습니다.
+
+| Contributor | Primary Domain | Key Contributions |
+| :---: | --- | --- |
+| <a href="https://github.com/Pionia5375"><img src="https://github.com/Pionia5375.png?size=80" width="56" alt="@Pionia5375"/></a><br/><b>이정</b><br/><sub><b>TEAM LEAD</b></sub><br/><sub><a href="https://github.com/Pionia5375">@Pionia5375</a></sub> | **Product · System Architecture · Control Plane** | 제품·시스템 설계와 기술 의사결정, 규칙·AI 분석기와 IR, Fastify API, PostgreSQL Job Queue, 배포 상태 머신·오케스트레이션 |
+| <a href="https://github.com/csh1668"><img src="https://github.com/csh1668.png?size=80" width="56" alt="@csh1668"/><br/><sub><b>조서현</b></sub><br/><sub>@csh1668</sub></a> | **Cloud Infrastructure · Platform Operations** | AWS 배포 프로필과 플랫폼 인프라, Terraform 상태·캐시·롤아웃 최적화, 플랫폼 배포·운영 관측 |
+| <a href="https://github.com/awj1052"><img src="https://github.com/awj1052.png?size=80" width="56" alt="@awj1052"/><br/><sub><b>안우진</b></sub><br/><sub>@awj1052</sub></a> | **Authentication · API Security** | 운영 환경 API Key 검증, Session·Bearer 인증, 인증 실패 시 차단하는 보안 정책 |
+| <a href="https://github.com/gpffh20"><img src="https://github.com/gpffh20.png?size=80" width="56" alt="@gpffh20"/><br/><sub><b>신은영</b></sub><br/><sub>@gpffh20</sub></a> | **Build · Provisioning · Deployment Engine** | IR Adapter, Docker Buildx·ECR 이미지 파이프라인, Terraform ECS 프로비저닝, Cloudflare·Agent Job 연동 |
+| <a href="https://github.com/minseong99"><img src="https://github.com/minseong99.png?size=80" width="56" alt="@minseong99"/><br/><sub><b>김민성</b></sub><br/><sub>@minseong99</sub></a> | **Frontend · Product UX** | React Web Console, 프로젝트·배포·환경 전환 UX, 실시간 진행 상태와 결과 화면, 한국어·일본어 지원 |
+| <a href="https://github.com/kmsdevdata-sketch"><img src="https://github.com/kmsdevdata-sketch.png?size=80" width="56" alt="@kmsdevdata-sketch"/><br/><sub><b>김민서</b></sub><br/><sub>@kmsdevdata-sketch</sub></a> | **Verification · On-Prem Runtime · Failover** | 후보 Endpoint·최종 URL 검증, On-Prem Agent와 Compose·Tunnel 실행, 복구·정리 정책, 장애 감지·AWS Failover |
 <br />
 
 ## 🔗 Repository
