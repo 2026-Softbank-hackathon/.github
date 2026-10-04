@@ -148,29 +148,61 @@ AWS와 온프레미스 환경에 배포하는 **AI 원클릭 배포 시스템, C
 
 ## 🖥️ 상황별 화면
 
-코로(コロ)가 앱을 새 집으로 옮겨 주는 과정을 그대로 보여 줍니다. 말풍선은 서버가 남긴 단계 로그와 헬스체크 현황을 그대로 말합니다.
+코로(コロ)가 앱을 새 집으로 옮겨 주는 과정을 상황마다 순서대로 보여 줍니다. 말풍선은 서버가 남긴 단계 로그와 헬스체크 현황을 그대로 말합니다.
+
+### ☁️ AWS 에 처음 배포
+
+ZIP 을 올리면 분석해서 배포 명세(IR)를 만들고, 이미지를 한 번 빌드해 AWS 로 옮깁니다.
 
 <table>
   <tr>
-    <td width="50%"><img src="../assets/screens/03-aws-deploy.png" alt="AWS 배포 진행 화면" /><br /><sub><b>AWS 배포</b> · 빌드한 집을 비행기에 싣고 구름(AWS)으로. 새 컨테이너가 켜지는 과정을 숫자로 알려 줍니다.</sub></td>
-    <td width="50%"><img src="../assets/screens/04-onprem-deploy.png" alt="온프레미스 배포 진행 화면" /><br /><sub><b>온프레미스 배포</b> · 에이전트 로봇이 같은 이미지를 받아 서버에서 컨테이너를 켭니다.</sub></td>
-  </tr>
-  <tr>
-    <td><img src="../assets/screens/05-verify.png" alt="검증 단계" /><br /><sub><b>검증</b> · 헬스체크가 3회 연속 통과해야 서비스 주소를 연결합니다.</sub></td>
-    <td><img src="../assets/screens/06-result.png" alt="배포 결과 화면" /><br /><sub><b>배포 완료</b> · 서비스 주소와 걸린 시간, 단계별 소요 시간.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-aws-1.png" alt="이미지 빌드" /><br /><sub>① 분석 결과로 배포 명세를 만들고 집(이미지)을 짓습니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-aws-2.png" alt="AWS 로 배포" /><br /><sub>② 집을 비행기에 싣고 구름(AWS)으로 옮깁니다. 새 컨테이너가 켜지는 과정을 숫자로 알려 줍니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-aws-3.png" alt="배포 완료" /><br /><sub>③ 검증을 통과하면 LIVE 표지가 붙습니다.</sub></td>
   </tr>
 </table>
 
-### 🔁 환경 전환과 롤백
+### 🏠 온프레미스에 처음 배포
+
+같은 방식으로 빌드한 이미지를, 서버에 설치한 On-Prem Agent 가 받아 실행합니다.
 
 <table>
   <tr>
-    <td width="50%"><img src="../assets/screens/07-switch-to-onprem.png" alt="AWS에서 온프레미스로 전환" /><br /><sub><b>AWS → 온프레미스</b> · 같은 이미지를 그대로 옮깁니다. 검증이 끝날 때까지는 기존 환경이 계속 서비스합니다.</sub></td>
-    <td width="50%"><img src="../assets/screens/07-switch-to-aws.png" alt="온프레미스에서 AWS로 전환" /><br /><sub><b>온프레미스 → AWS</b> · ZIP 을 다시 올리지 않고 버튼 하나로 전환합니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-onprem-1.png" alt="이미지 빌드" /><br /><sub>① 이미지를 빌드합니다. AWS 와 같은 이미지를 씁니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-onprem-2.png" alt="에이전트가 배포" /><br /><sub>② 에이전트 로봇이 이미지를 받아 서버에서 컨테이너를 켭니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-onprem-3.png" alt="배포 완료" /><br /><sub>③ 서버 옆에 집이 자리 잡고 LIVE 가 됩니다.</sub></td>
   </tr>
+</table>
+
+### 🪂 AWS → 온프레미스 전환
+
+ZIP 을 다시 올리지 않고 버튼 하나로 옮깁니다. 같은 이미지를 쓰므로 분석과 빌드를 건너뜁니다.
+
+<table>
   <tr>
-    <td><img src="../assets/screens/09-rollback-pick.png" alt="되돌릴 버전 고르기" /><br /><sub><b>롤백</b> · 지금 서비스 중인 버전 상자에서 되돌릴 버전을 고릅니다.</sub></td>
-    <td><img src="../assets/screens/09-rollback-progress.png" alt="롤백 진행 화면" /><br /><sub><b>롤백 진행</b> · 예전 이미지를 다시 쓰므로 분석과 빌드를 건너뜁니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-to-onprem-1.png" alt="전환 준비" /><br /><sub>① 온프레미스에 자리를 준비합니다. 검증이 끝날 때까지는 AWS 가 계속 서비스합니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-to-onprem-2.png" alt="낙하산으로 이동" /><br /><sub>② 집이 낙하산을 타고 구름에서 서버 옆으로 내려옵니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-to-onprem-3.png" alt="전환 완료" /><br /><sub>③ LIVE 표지가 온프레미스로 옮겨 갑니다.</sub></td>
+  </tr>
+</table>
+
+### ✈️ 온프레미스 → AWS 전환
+
+<table>
+  <tr>
+    <td width="33%"><img src="../assets/screens/flow-to-aws-1.png" alt="전환 준비" /><br /><sub>① 비행기를 조립합니다. 그동안 온프레미스가 계속 서비스합니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-to-aws-2.png" alt="AWS 로 이동" /><br /><sub>② 집을 싣고 구름(AWS)으로 날아갑니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-to-aws-3.png" alt="전환 완료" /><br /><sub>③ LIVE 표지가 AWS 로 옮겨 갑니다.</sub></td>
+  </tr>
+</table>
+
+### ⏪ 롤백
+
+<table>
+  <tr>
+    <td width="33%"><img src="../assets/screens/flow-rollback-0.png" alt="되돌릴 버전 고르기" /><br /><sub>① 지금 서비스 중인 버전 상자에서 되돌릴 버전을 고릅니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-rollback-1.png" alt="되돌리는 중" /><br /><sub>② 창고에 둔 예전 이미지를 다시 꺼내 씁니다. 빌드는 하지 않습니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/flow-rollback-3.png" alt="롤백 완료" /><br /><sub>③ 이전 버전이 다시 LIVE 가 됩니다.</sub></td>
   </tr>
 </table>
 
@@ -182,19 +214,23 @@ AWS와 온프레미스 환경에 배포하는 **AI 원클릭 배포 시스템, C
   <tr>
     <td width="33%"><img src="../assets/screens/14-failover-1-alarm.png" alt="온프레미스 장애 감지" /><br /><sub>① 온프레미스의 불이 꺼지고 코로가 놀랍니다.</sub></td>
     <td width="33%"><img src="../assets/screens/14-failover-2-board.png" alt="비행기에 탑승" /><br /><sub>② 비행기가 집과 코로를 태웁니다.</sub></td>
-    <td width="33%"><img src="../assets/screens/14-failover-3-fly.png" alt="AWS로 이동" /><br /><sub>③ 구름 위 AWS 로 날아가 복구를 마칩니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/14-failover-3-fly.png" alt="AWS 로 이동" /><br /><sub>③ 구름 위 AWS 로 날아가 복구를 마칩니다.</sub></td>
   </tr>
 </table>
 
 <details>
-<summary><b>더 보기</b> — 처음 배포의 빌드, 실패 화면, 서버리스, 앱 상세, 대시보드, 운영 화면</summary>
+<summary><b>더 보기</b> — 화면 전체 모습 (진행 · 검증 · 결과 · 실패 · 서버리스 · 앱 상세 · 대시보드 · 운영)</summary>
 
 <br />
 
 <table>
   <tr>
-    <td width="50%"><img src="../assets/screens/02-aws-build.png" alt="빌드 단계" /><br /><sub><b>빌드</b> · 분석 결과로 배포 명세(IR)를 만들고 이미지를 한 번만 빌드합니다.</sub></td>
-    <td width="50%"><img src="../assets/screens/11-failed.png" alt="배포 실패 화면" /><br /><sub><b>실패</b> · 실패 원인과 오류 코드를 보여 주고 바로 재배포할 수 있습니다.</sub></td>
+    <td width="50%"><img src="../assets/screens/03-aws-deploy.png" alt="배포 진행 화면" /><br /><sub><b>배포 진행 화면</b> · 단계 칩, 경과 시간, 장면, 로그 · 분석 탭.</sub></td>
+    <td width="50%"><img src="../assets/screens/05-verify.png" alt="검증 단계" /><br /><sub><b>검증</b> · 헬스체크가 3회 연속 통과해야 서비스 주소를 연결합니다.</sub></td>
+  </tr>
+  <tr>
+    <td><img src="../assets/screens/06-result.png" alt="배포 결과 화면" /><br /><sub><b>배포 완료</b> · 서비스 주소와 걸린 시간, 단계별 소요 시간.</sub></td>
+    <td><img src="../assets/screens/11-failed.png" alt="배포 실패 화면" /><br /><sub><b>실패</b> · 실패 원인과 오류 코드를 보여 주고 바로 재배포할 수 있습니다.</sub></td>
   </tr>
   <tr>
     <td><img src="../assets/screens/10-serverless-result.png" alt="서버리스 배포 결과" /><br /><sub><b>서버리스</b> · 같은 이미지를 AWS Lambda 로 배포한 결과.</sub></td>
@@ -259,8 +295,6 @@ AWS와 온프레미스 환경에 배포하는 **AI 원클릭 배포 시스템, C
 | Backend | | API · 배포 파이프라인 |
 | Infra | | Terraform 프로필 · 플랫폼 |
 | On-Prem Agent | | 에이전트 · Cloudflare 연동 |
-| 모니터링 |  | |
-| 보안 | | |
 
 <br />
 
