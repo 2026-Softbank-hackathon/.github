@@ -266,7 +266,7 @@ ZIP 을 다시 올리지 않고 버튼 하나로 옮깁니다. 같은 이미지�
 ## 🏗️ Architecture
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/2026-Softbank-hackathon/Auto-Deployment-System/main/docs/architecture_overall_v5.4.1.svg" alt="전체 아키텍처" width="90%" />
+  <img src="../assets/camellia-overview-reference.png" alt="전체 아키텍처" width="90%" />
 </div>
 
 <br />
@@ -295,6 +295,8 @@ ZIP 을 다시 올리지 않고 버튼 하나로 옮깁니다. 같은 이미지�
 | Backend | | API · 배포 파이프라인 |
 | Infra | | Terraform 프로필 · 플랫폼 |
 | On-Prem Agent | | 에이전트 · Cloudflare 연동 |
+| 모니터링 | | |
+| 보안 | | |
 
 <br />
 
