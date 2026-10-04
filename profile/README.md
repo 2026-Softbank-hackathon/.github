@@ -144,6 +144,130 @@ AWS와 온프레미스 환경에 배포하는 **AI 원클릭 배포 시스템, C
 8. 연속 헬스체크를 통한 배포 검증 및 결과 기록
 9. 배포 완료 URL 제공
 
+<br />
+
+## 🖥️ 상황별 화면
+
+코로(コロ)가 앱을 새 집으로 옮겨 주는 과정을 그대로 보여 줍니다. 말풍선은 서버가 남긴 단계 로그와 헬스체크 현황을 그대로 말합니다.
+
+<table>
+  <tr>
+    <td width="50%"><img src="../assets/screens/03-aws-deploy.png" alt="AWS 배포 진행 화면" /><br /><sub><b>AWS 배포</b> · 빌드한 집을 비행기에 싣고 구름(AWS)으로. 새 컨테이너가 켜지는 과정을 숫자로 알려 줍니다.</sub></td>
+    <td width="50%"><img src="../assets/screens/04-onprem-deploy.png" alt="온프레미스 배포 진행 화면" /><br /><sub><b>온프레미스 배포</b> · 에이전트 로봇이 같은 이미지를 받아 서버에서 컨테이너를 켭니다.</sub></td>
+  </tr>
+  <tr>
+    <td><img src="../assets/screens/05-verify.png" alt="검증 단계" /><br /><sub><b>검증</b> · 헬스체크가 3회 연속 통과해야 서비스 주소를 연결합니다.</sub></td>
+    <td><img src="../assets/screens/06-result.png" alt="배포 결과 화면" /><br /><sub><b>배포 완료</b> · 서비스 주소와 걸린 시간, 단계별 소요 시간.</sub></td>
+  </tr>
+</table>
+
+### 🔁 환경 전환과 롤백
+
+<table>
+  <tr>
+    <td width="50%"><img src="../assets/screens/07-switch-to-onprem.png" alt="AWS에서 온프레미스로 전환" /><br /><sub><b>AWS → 온프레미스</b> · 같은 이미지를 그대로 옮깁니다. 검증이 끝날 때까지는 기존 환경이 계속 서비스합니다.</sub></td>
+    <td width="50%"><img src="../assets/screens/07-switch-to-aws.png" alt="온프레미스에서 AWS로 전환" /><br /><sub><b>온프레미스 → AWS</b> · ZIP 을 다시 올리지 않고 버튼 하나로 전환합니다.</sub></td>
+  </tr>
+  <tr>
+    <td><img src="../assets/screens/09-rollback-pick.png" alt="되돌릴 버전 고르기" /><br /><sub><b>롤백</b> · 지금 서비스 중인 버전 상자에서 되돌릴 버전을 고릅니다.</sub></td>
+    <td><img src="../assets/screens/09-rollback-progress.png" alt="롤백 진행 화면" /><br /><sub><b>롤백 진행</b> · 예전 이미지를 다시 쓰므로 분석과 빌드를 건너뜁니다.</sub></td>
+  </tr>
+</table>
+
+### 🚨 온프레미스 장애 → AWS 자동 복구
+
+온프레미스에 문제가 생기면 대기 중인 AWS 배포로 서비스 주소를 자동으로 돌립니다.
+
+<table>
+  <tr>
+    <td width="33%"><img src="../assets/screens/14-failover-1-alarm.png" alt="온프레미스 장애 감지" /><br /><sub>① 온프레미스의 불이 꺼지고 코로가 놀랍니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/14-failover-2-board.png" alt="비행기에 탑승" /><br /><sub>② 비행기가 집과 코로를 태웁니다.</sub></td>
+    <td width="33%"><img src="../assets/screens/14-failover-3-fly.png" alt="AWS로 이동" /><br /><sub>③ 구름 위 AWS 로 날아가 복구를 마칩니다.</sub></td>
+  </tr>
+</table>
+
+<details>
+<summary><b>더 보기</b> — 처음 배포의 빌드, 실패 화면, 서버리스, 앱 상세, 대시보드, 운영 화면</summary>
+
+<br />
+
+<table>
+  <tr>
+    <td width="50%"><img src="../assets/screens/02-aws-build.png" alt="빌드 단계" /><br /><sub><b>빌드</b> · 분석 결과로 배포 명세(IR)를 만들고 이미지를 한 번만 빌드합니다.</sub></td>
+    <td width="50%"><img src="../assets/screens/11-failed.png" alt="배포 실패 화면" /><br /><sub><b>실패</b> · 실패 원인과 오류 코드를 보여 주고 바로 재배포할 수 있습니다.</sub></td>
+  </tr>
+  <tr>
+    <td><img src="../assets/screens/10-serverless-result.png" alt="서버리스 배포 결과" /><br /><sub><b>서버리스</b> · 같은 이미지를 AWS Lambda 로 배포한 결과.</sub></td>
+    <td><img src="../assets/screens/08-app-detail.png" alt="앱 상세 화면" /><br /><sub><b>앱 상세</b> · 재배포 · 환경 전환 · 서버리스 전환 · 롤백을 한 곳에서.</sub></td>
+  </tr>
+  <tr>
+    <td><img src="../assets/screens/12-dashboard.png" alt="대시보드" /><br /><sub><b>대시보드</b> · 앱마다 지금 어디서 서비스 중인지 한눈에.</sub></td>
+    <td><img src="../assets/screens/13-ops.png" alt="운영 화면" /><br /><sub><b>운영</b> · 작업 큐와 워커, 플랫폼 서버, AI 사용량.</sub></td>
+  </tr>
+</table>
+
+</details>
+
+<br />
+
+## ✨ 핵심 기능
+
+| 기능 | 설명 |
+|---|---|
+| **원클릭 배포** | ZIP 을 올리고 연결을 고르면 분석부터 검증까지 이어서 진행합니다. |
+| **AI 분석과 배포 명세(IR)** | 규칙으로 스택 · 포트를 찾고, 못 찾은 칸은 AI 가 채워 하나의 배포 명세로 만듭니다. |
+| **한 번 빌드, 여러 환경** | 이미지는 한 번만 만들고 AWS 에도 온프레미스에도 같은 이미지를 씁니다. |
+| **AWS 배포 형태 3가지** | 컨테이너(ECS Fargate) · 서버리스(Lambda) · 정적 사이트(S3). |
+| **온프레미스 배포** | 서버에 설치한 On-Prem Agent 가 이미지를 받아 Docker 로 실행합니다. |
+| **검증 후 주소 연결** | 헬스체크 3회 연속 통과 뒤에 서비스 주소를 새 버전에 연결합니다. |
+| **재배포 · 롤백 · 환경 전환** | ZIP 을 다시 올리지 않고 버튼으로. 분석과 빌드를 건너뜁니다. |
+| **자동 장애 복구** | 온프레미스 장애 시 대기 중인 AWS 배포로 자동 전환합니다. |
+| **실패 진단** | 실패 원인과 오류 코드, AI 진단을 보여 줍니다. |
+| **한국어 · 日本語** | 화면 전체를 두 언어로 제공합니다. |
+
+<br />
+
+## 🏗️ Architecture
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/2026-Softbank-hackathon/Auto-Deployment-System/main/docs/architecture_overall_v5.4.1.svg" alt="전체 아키텍처" width="90%" />
+</div>
+
+<br />
+
+## 📈 측정 결과
+
+실제 서비스 API 와 실제 AWS · 온프레미스 런타임에서 13개 시나리오, 배포 61건을 측정했습니다 (2026-10-02).
+
+| 시나리오 | 전체 소요 시간 (중앙값) |
+|---|---:|
+| AWS 신규 이미지 배포 | 2.03분 |
+| AWS 동일 이미지 재배포 | 20.32초 |
+| 온프레미스 신규 이미지 배포 | 27.26초 |
+| 온프레미스 → AWS 전환 | 26.55초 |
+| AWS → 온프레미스 전환 | 19.00초 |
+
+전체 결과: [성능 · 복원력 테스트 보고서](https://github.com/2026-Softbank-hackathon/Auto-Deployment-System/tree/main/docs/performance-results/20261002-comprehensive)
+
+<br />
+
+## 👥 Team
+
+| 역할 | 이름 | 담당 |
+|---|---|---|
+| Frontend | | 웹 콘솔 |
+| Backend | | API · 배포 파이프라인 |
+| Infra | | Terraform 프로필 · 플랫폼 |
+| On-Prem Agent | | 에이전트 · Cloudflare 연동 |
+| 모니터링 |  | |
+| 보안 | | |
+
+<br />
+
+## 🔗 Repository
+
+- [Auto-Deployment-System](https://github.com/2026-Softbank-hackathon/Auto-Deployment-System) — 배포 플랫폼 전체 (API · Worker · Web · On-Prem Agent · Terraform)
+
 ---
 
 <div align="center">
