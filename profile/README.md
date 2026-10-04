@@ -200,9 +200,9 @@ ZIP 을 다시 올리지 않고 버튼 하나로 옮깁니다. 같은 이미지�
 
 <table>
   <tr>
-    <td width="33%"><img src="../assets/screens/flow-rollback-0.png" alt="되돌릴 버전 고르기" /><br /><sub>① 지금 서비스 중인 버전 상자에서 되돌릴 버전을 고릅니다.</sub></td>
-    <td width="33%"><img src="../assets/screens/flow-rollback-1.png" alt="되돌리는 중" /><br /><sub>② 창고에 둔 예전 이미지를 다시 꺼내 씁니다. 빌드는 하지 않습니다.</sub></td>
-    <td width="33%"><img src="../assets/screens/flow-rollback-3.png" alt="롤백 완료" /><br /><sub>③ 이전 버전이 다시 LIVE 가 됩니다.</sub></td>
+    <td width="33%" valign="top"><img src="../assets/screens/flow-rollback-0.png" alt="되돌릴 버전 고르기" /><br /><sub>① 지금 서비스 중인 버전 상자에서 되돌릴 버전을 고릅니다.</sub></td>
+    <td width="33%" valign="top"><img src="../assets/screens/flow-rollback-1.png" alt="되돌리는 중" /><br /><sub>② 창고의 예전 이미지를 다시 씁니다. 빌드는 건너뜁니다.</sub></td>
+    <td width="33%" valign="top"><img src="../assets/screens/flow-rollback-3.png" alt="롤백 완료" /><br /><sub>③ 이전 버전이 다시 LIVE 가 됩니다.</sub></td>
   </tr>
 </table>
 
